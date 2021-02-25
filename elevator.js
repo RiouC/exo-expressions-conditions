@@ -1,20 +1,23 @@
+const chalk = require('chalk');
+
+
 let currentFloor = -2;
 let targetFloor = 7;
 
 
 const alreadyFloor = (desiredFloor) => {
-    console.log(`You are already on floor number ${desiredFloor}.`);
+    console.log(chalk.hex('#DEADED').bold(`You are already on floor number ${desiredFloor}.`));
 }
 
 const arrived = (desiredFloor) => {
-    console.log(`You are arrived to floor number ${desiredFloor}.`);
+    console.log(chalk.green(`You are arrived to floor number ${desiredFloor}.`));
 }
 
 
 if (currentFloor >= -2 &&
     currentFloor <= 7  &&
     parseInt(currentFloor) == currentFloor) {
-    console.log(`You were on floor number ${currentFloor}.`);
+    console.log(chalk.yellow(`You were on floor number ${currentFloor}.`));
 
     switch (targetFloor) {
     case -2:
@@ -48,9 +51,9 @@ if (currentFloor >= -2 &&
 	(currentFloor === 7) ? alreadyFloor(7) : arrived(7);
 	break;
     default:
-	console.log('Please retry with a correct floor');
+	console.log(chalk.red('Please retry with a correct floor'));
     }
 } else {
-    console.log('Please retry with a correct floor');
+    console.log(chalk.red('Please retry with a correct floor'));
 }
 
