@@ -29,16 +29,7 @@ let nbY = 0
 
 for (let i = 0; i < text.length; ++i) {
     switch (text[i]) {
-    case 'e':
-	++nbE;
-	break;
-    case 'é':
-	++nbE;
-	break;
-    case 'è':
-	++nbE;
-	break;
-    case 'ê':
+    case 'e' || 'é' || 'è' || 'ê' :
 	++nbE;
 	break;
     case 'a':
